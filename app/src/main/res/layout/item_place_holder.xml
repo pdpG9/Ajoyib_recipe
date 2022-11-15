@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:padding="16dp"
+    android:layout_gravity="center"
+    android:layout_height="wrap_content">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        style="@style/TextStyleItemDescription"
+        android:layout_gravity="center"
+        android:id="@+id/tv_place_holder"
+        android:text="@string/ma_lumot_mavjud_emas"/>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:padding="16dp"
+        android:indeterminate="true"
+        android:indeterminateTintMode="src_atop"
+        android:indeterminateTint="@color/menu_text_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+</FrameLayout>

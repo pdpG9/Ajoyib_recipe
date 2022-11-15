@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="card_corner_button">22dp</dimen>
+    <dimen name="card_corner_medium">24dp</dimen>
+    <dimen name="card_corner_small">12dp</dimen>
+
+
+    <dimen name="text_size_menu">36sp</dimen>
+    <dimen name="text_size_main_button">27sp</dimen>
+    <dimen name="text_size_main_title">20sp</dimen>
+    <dimen name="text_size_item_title">12sp</dimen>
+    <dimen name="text_size_item_description">9sp</dimen>
+    
+    <dimen name="margin_main">28dp</dimen>
+    <dimen name="margin_largeTop">56dp</dimen>
+    <dimen name="margin_mediumTop">38dp</dimen>
+    <dimen name="margin_itemRecipe">12dp</dimen>
+    <dimen name="margin_middleTwoView">3dp</dimen>
+
+    <dimen name="margin_item_large">16dp</dimen>
+    <dimen name="margin_item_small">6dp</dimen>
+
+    <dimen name="size_small_icon">35dp</dimen>
+    <dimen name="size_medium_icon">48dp</dimen>
+</resources>

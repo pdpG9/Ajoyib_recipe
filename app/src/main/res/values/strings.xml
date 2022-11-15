@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Ajoyib retseptlar</string>
+    <string name="today_recipe">Kun retsepti</string>
+    <string name="all_recipes">Barcha retseptlar</string>
+    <string name="demo_title">Mayiz va yong`oqli apelsinli keks</string>
+    <string name="demo_description">Ushbu yong’oq va mayizli, apelsin iforli keks juda lazzatlidir. Salqin kechalarda bir piyola choy bilan mukammaldir. Mayiz o’rniga boshqa quruq mevalarni solish mumkin, yong’oqlarni esa maydalash kerak emas, kattaroq bo’laklari…</string>
+    <!--    <string name="daqiqa">daqiqa</string>-->
+    <!--    <string name="soat">soat</string>-->
+    <string name="daqiqa"> m. </string>
+    <string name="soat"> h. </string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="category">Toifa</string>
+    <string name="ingredients">Mahsulotlar</string>
+    <string name="details">Qadamlar</string>
+    <string name="mahsulotlar"> ta mahsulot</string>
+    <string name="jarayon"> ta qadam</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="info_description">
+        Ushbu dastur <b>GITA</b> dasturchilar academiyasi "<u>Bootcamp 4</u>" guruhi o`quvchisi <i>Zokirov Shukrullo</i>
+        tomonidan darslarda berilgan vazifaga muvofiq yaratildi. Dasturda ishlatilgan ma`lumotlar bazasi <i>https://zira.uz/uz/t/turk-oshxonasi/</i> web saytidan foydalanib yaratilgan.
+        Dasturda aniqlangan nosozliklar bo`yicha:<u>https://t.me/Ax1234321</u> ga murojat qilishingiz mumkin! \n
+        Dasturning keyingi versiyalarida ma`lumotlar bazasini boyitishga, aniqlangan kamchiliklarni to`g`rlashga harakat qilamiz!
+    </string>
+    <string name="start_cooking_nfrom_today">Taom tayyorlashni\nbugundan boshlang</string>
+    <string name="get_started">Olg‘a</string>
+    <string name="_9_items">9 Items</string>
+    <string name="ma_lumot_mavjud_emas">Ma`lumot mavjud emas!</string>
+    <string name="indian_food">Indian food</string>
+    <string name="_4_9">4.9</string>
+</resources>

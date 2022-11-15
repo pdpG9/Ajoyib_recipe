@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.info.InfoFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="100dp"
+            android:id="@+id/logo"
+            app:cardCornerRadius="50dp"
+            android:layout_marginTop="@dimen/margin_mediumTop"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_height="100dp">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/gita_logo"/>
+        </com.google.android.material.card.MaterialCardView>
+<androidx.appcompat.widget.AppCompatTextView
+    android:layout_width="match_parent"
+    app:layout_constraintTop_toBottomOf="@id/logo"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    android:layout_marginVertical="@dimen/margin_mediumTop"
+    android:layout_marginHorizontal="@dimen/margin_main"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/poppins_medium"
+    android:textColor="@color/title_text_color"
+    android:padding="6dp"
+    android:gravity="center"
+    android:text="@string/info_description"
+    android:id="@+id/tvInfo"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
