@@ -15,7 +15,7 @@
             android:layout_width="@dimen/size_small_icon"
             android:layout_height="@dimen/size_small_icon"
             android:layout_margin="@dimen/margin_main"
-            app:cardBackgroundColor="@color/selected_category"
+            style="@style/CategoryItemCardStyle"
             app:cardCornerRadius="@dimen/card_corner_medium"
             app:cardElevation="0.3dp"
             app:layout_constraintLeft_toLeftOf="parent"
