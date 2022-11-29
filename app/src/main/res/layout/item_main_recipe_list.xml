@@ -8,6 +8,8 @@
         android:id="@+id/titleRecipesList"
         android:text="@string/all_recipes"
         style="@style/TitleTextStyle"
+        android:layout_marginVertical="@dimen/margin_mediumTop"
+        android:layout_marginHorizontal="@dimen/margin_main"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

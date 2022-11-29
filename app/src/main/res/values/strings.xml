@@ -16,11 +16,43 @@
     <string name="jarayon"> ta qadam</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="info_description">
-        Ushbu dastur <b>GITA</b> dasturchilar academiyasi "<u>Bootcamp 4</u>" guruhi o`quvchisi <i>Zokirov Shukrullo</i>
-        tomonidan darslarda berilgan vazifaga muvofiq yaratildi. Dasturda ishlatilgan ma`lumotlar bazasi <i>https://zira.uz/uz/t/turk-oshxonasi/</i> web saytidan foydalanib yaratilgan.
-        Dasturda aniqlangan nosozliklar bo`yicha:<u>https://t.me/Ax1234321</u> ga murojat qilishingiz mumkin! \n
-        Dasturning keyingi versiyalarida ma`lumotlar bazasini boyitishga, aniqlangan kamchiliklarni to`g`rlashga harakat qilamiz!
+    <string name="info_description"><h2>Ajoyib retsept</h2>
+<p>
+  Ushbu dastur GITA dasturchilar akademiyasi BootCamp4 guruhi o‘quvchisi tomonidan,
+  darslarda berilgan vaizfalar asosida ishlab chiqildi. Dasturda ishlatilgan texnologiyalar:
+</p>
+<ul>
+  <li>Room</li>
+  <li>Glide</li>
+  <li>Navigation components</li>
+  <li>Lottie</li>
+  <li>EventBus</li>
+</ul>
+<h2>Foydalanilgan manbaalar</h2>
+<p>
+  Dasturda ishlatilgan ma`lumotlar  <a href="https://zira.uz/uz/t/turk-oshxonasi/">zira.uz</a>
+  web sahifasidan beg`araz olindi.
+</p>
+<h2>Biz bilan bog`lanish</h2>
+<dl>
+  <dt>Telegram</dt>
+  <dd>
+   <a href="https://t.me/gitauz">GITA dasturchilar akademiyasining telegram sahifasi</a>
+  </dd>
+  <dt>YouTube</dt>
+  <dd>
+  <a href="https://www.youtube.com/@gitauzofficial">GITA dasturchilar akademiyasining You Tube sahifasi</a>
+  </dd>
+  <dt>Dasturchi</dt>
+  <dd>
+   <a href="https://t.me/Ax1234321">Zokirov Shukrullo</a>
+  </dd>
+</dl>
+<h2>Kelgusida</h2>
+<p>
+  Dasturda aniqlangan kamchiliklar, xatoliklar yuzasaidan bizga murojaat qiling. Biz albatta sizning murojaatingizni inobatga olamiz.Dasturning kelgusi nashrlarida aniqlangan noqulayliklarni bartaraf etishga va ma`lumorlat bazasini boyitishga harakat qilamiz.
+</p>
+<h2>E`tiboringiz uchun raxmat!</h2>
     </string>
     <string name="start_cooking_nfrom_today">Taom tayyorlashni\nbugundan boshlang</string>
     <string name="get_started">Olg‘a</string>

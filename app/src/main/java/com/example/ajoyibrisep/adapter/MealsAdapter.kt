@@ -5,14 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.widget.AppCompatImageButton
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.ajoyibrisep.R
 import com.example.ajoyibrisep.db.entity.MealModel
-import com.example.ajoyibrisep.db.pref.MealPref
 
 
 class MealsAdapter :
@@ -34,14 +32,10 @@ class MealsAdapter :
     }
 
     inner class MealViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val favouriteButton: AppCompatImageButton = itemView.findViewById(R.id.bt_favourite)
 
         init {
             itemView.setOnClickListener {
                 itemClickListener.invoke(adapterPosition)
-            }
-            favouriteButton.setOnClickListener {
-                itemLikeClickListener.invoke(adapterPosition)
             }
         }
 
@@ -58,12 +52,6 @@ class MealsAdapter :
             timeHour.text = hour.toString()
             timeMinute.text = hour.toString()
             checkHour(hour, minute)
-            val b = MealPref().isHaveMeal(list[adapterPosition].id)
-            if (b) {
-                favouriteButton.setImageResource(R.drawable.ic_baseline_favorite_24)
-            } else {
-                favouriteButton.setImageResource(R.drawable.ic_baseline_favorite_border_24)
-            }
             Glide.with(itemView).load(data.image)
                 .placeholder(R.drawable.image_menu)
                 .into(imageView)

@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.ajoyibrisep.R
 import com.example.ajoyibrisep.databinding.FragmentMenuBinding
+import com.example.ajoyibrisep.utils.changeColorByMode
 
 
 class MenuFragment : Fragment() {
@@ -19,6 +20,7 @@ class MenuFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MenuViewModel::class.java)
+
 
     }
 
@@ -33,6 +35,8 @@ class MenuFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         requireActivity().window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
+        requireActivity().window.statusBarColor = requireActivity().getColor(R.color.white)
+        requireActivity().window.changeColorByMode(false,R.color.black)
         binding?.btGetStarted?.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_firstFragment)
         }

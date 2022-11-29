@@ -88,17 +88,6 @@ class MealFragment : Fragment() {
             btBack.setOnClickListener {
                 findNavController().popBackStack()
             }
-            btLike.setOnClickListener {
-                showPlaceHolder(true)
-                val b = MealPref().isHaveMeal(currentMeal.id)
-                if (b) {
-                    MealPref().removeMeal(currentMeal.id)
-                } else {
-                    MealPref().addMeal(currentMeal.id)
-                }
-                updateLike()
-                showPlaceHolder(false)
-            }
             btIngredients.setOnClickListener {
                 if (!isIngClick) {
                     ingPager.currentItem = 0
@@ -126,7 +115,6 @@ class MealFragment : Fragment() {
         vm = MealViewModel()
         vm.loadData(currentMeal.id)
         binding!!.titleMeal.text = currentMeal.title
-        updateLike()
         if (currentMeal.video_uri != null) {
             binding!!.btYouTube.visibility = View.VISIBLE
             binding!!.btYouTube.setOnClickListener {
@@ -137,19 +125,10 @@ class MealFragment : Fragment() {
             binding!!.btYouTube.visibility = View.INVISIBLE
         }
         if (currentMeal.web_url!=null){
-            binding!!.titleMeal.setOnClickListener {
+            binding!!.btLike.setOnClickListener {
                 val intent = Intent("android.intent.action.VIEW", Uri.parse(currentMeal.web_url))
                 startActivity(intent)
             }
-        }
-    }
-
-    private fun updateLike() {
-        val b = MealPref().isHaveMeal(currentMeal.id)
-        if (b) {
-            binding!!.ivLike.setImageResource(R.drawable.ic_baseline_favorite_24)
-        } else {
-            binding!!.ivLike.setImageResource(R.drawable.ic_baseline_favorite_border_24)
         }
     }
 

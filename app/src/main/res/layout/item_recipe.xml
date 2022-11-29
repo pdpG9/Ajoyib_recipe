@@ -42,16 +42,6 @@
                     app:cardBackgroundColor="#80FFFFFF"
                     app:cardElevation="0.3dp"
                     tools:ignore="RtlHardcoded">
-
-                    <androidx.appcompat.widget.AppCompatImageButton
-                        android:id="@+id/bt_favourite"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="?android:selectableItemBackgroundBorderless"
-                        android:padding="3dp"
-                        android:src="@drawable/ic_baseline_favorite_border_24"
-                        android:tint="@color/icon_un_favourite" />
-
                 </com.google.android.material.card.MaterialCardView>
 
             </FrameLayout>

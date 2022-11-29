@@ -8,6 +8,16 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"
+            android:padding="@dimen/margin_item_large"
+            android:background="?android:selectableItemBackground"
+            android:id="@+id/btBack"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_margin="@dimen/margin_item_large"/>
         <com.google.android.material.card.MaterialCardView
             android:layout_width="100dp"
             android:id="@+id/logo"
@@ -28,12 +38,12 @@
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
     android:layout_marginVertical="@dimen/margin_mediumTop"
-    android:layout_marginHorizontal="@dimen/margin_main"
+    android:layout_marginHorizontal="@dimen/margin_item_large"
     android:layout_height="wrap_content"
     android:fontFamily="@font/poppins_medium"
     android:textColor="@color/title_text_color"
     android:padding="6dp"
-    android:gravity="center"
+    android:gravity="fill_horizontal"
     android:text="@string/info_description"
     android:id="@+id/tvInfo"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
