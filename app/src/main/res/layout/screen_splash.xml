@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="@drawable/bg_menu"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.screen.SplashScreen">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/image_card"
+        android:layout_marginHorizontal="32dp"
+        app:layout_constraintDimensionRatio="1"
+        app:cardCornerRadius="126dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        android:rotation="23"
+        >
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/image_menu" />
+    </com.google.android.material.card.MaterialCardView>
+
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/start_cooking_nfrom_today"
+    android:gravity="center"
+    android:textColor="@color/menu_text_color"
+    android:textSize="@dimen/text_size_main_button"
+    android:fontFamily="@font/poppins_regular"
+    app:layout_constraintTop_toBottomOf="@id/image_card"
+    android:layout_marginTop="32dp"
+    android:id="@+id/tv_startCooking"/>
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_menu_button"
+        android:text="@string/get_started"
+        android:textSize="@dimen/text_size_main_title"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/white"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="32dp"
+        android:id="@+id/bt_getStarted"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_startCooking"
+        android:layout_marginTop="32dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

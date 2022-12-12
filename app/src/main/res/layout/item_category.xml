@@ -5,9 +5,9 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/margin_main"
     app:cardCornerRadius="6dp"
+    android:id="@+id/categoryCard"
     style="@style/CategoryItemCardStyle"
     app:cardUseCompatPadding="true">
-
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/tv_category_item"
         android:layout_width="wrap_content"

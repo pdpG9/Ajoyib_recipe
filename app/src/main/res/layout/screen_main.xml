@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.ui.screen.MainScreen">
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin_main"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/app_name"
+        android:textSize="16sp"
+        android:textColor="@color/menu_text_color"
+        app:layout_constraintBottom_toBottomOf="@id/bt_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@id/bt_logo" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/bt_logo"
+        android:layout_width="@dimen/size_small_icon"
+        android:layout_height="@dimen/size_small_icon"
+        android:layout_margin="@dimen/margin_main"
+        app:civ_border_color="@color/menu_text_color"
+        app:civ_border_width="1dp"
+        android:src="@drawable/recep_logo"
+        app:layout_constraintBottom_toTopOf="@id/rv_main"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_main"
+        app:layout_constraintTop_toBottomOf="@id/bt_logo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+   <include
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       app:layout_constraintBottom_toBottomOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintRight_toRightOf="parent"
+       app:layout_constraintLeft_toLeftOf="parent"
+       android:id="@+id/itemPlaceHolder"
+       layout="@layout/item_place_holder"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

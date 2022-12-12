@@ -1,4 +1,4 @@
-<resources >
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.AjoyibRisep" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -22,8 +22,33 @@
         <item name="android:textColor">@color/text_grey</item>
         <item name="android:textSize">@dimen/text_size_item_title</item>
     </style>
+    <style name="ButtonBackStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:tint">@color/white</item>
+        <item name="android:padding">@dimen/margin_item_large</item>
+        <item name="android:background">?android:selectableItemBackground</item>
+        <item name="android:layout_margin">@dimen/margin_item_large</item>
+    </style>
+    <style name="MenuButtonStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size_item_title</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textColor">@color/selected_category</item>
+        <item name="android:background">@drawable/bg_ingredients_night</item>
+        <item name="android:paddingVertical" tools:ignore="NewApi">12dp</item>
+        <item name="android:paddingHorizontal" tools:ignore="NewApi">29dp</item>
+    </style>
 
     <style name="CategoryItemCardStyle">
-        <item name="cardBackgroundColor">@color/menu_text_color</item>
+        <item name="cardBackgroundColor">@color/un_selected_category_night</item>
+    </style>
+    <style name="ItemIngredientsLayoutStyle">
+        <item name="android:background">@drawable/bg_ingredients_night</item>
+    </style>
+    <style name="MealLinkCardStyle">
+        <item name="cardBackgroundColor">@color/un_selected_category_night</item>
     </style>
 </resources>
