@@ -1,6 +1,6 @@
 package com.example.ajoyibrisep.presentation.ui.screen
 
-import android.graphics.Color
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -12,16 +12,19 @@ import com.example.ajoyibrisep.R
 import com.example.ajoyibrisep.databinding.ScreenSplashBinding
 import com.example.ajoyibrisep.presentation.viewmodel.SplashViewModel
 import com.example.ajoyibrisep.presentation.viewmodel.imp.SplashViewModelImp
-import com.example.ajoyibrisep.utils.hideStatusBar
+import com.example.ajoyibrisep.utils.uploadStatusBarColor
 
 
+@SuppressLint("CustomSplashScreen")
 class SplashScreen : Fragment(R.layout.screen_splash) {
     private val binding by viewBinding(ScreenSplashBinding::bind)
     private val vm: SplashViewModel by viewModels<SplashViewModelImp>()
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        requireActivity().uploadStatusBarColor(requireContext())
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        requireActivity().window.statusBarColor = Color.TRANSPARENT
-        requireActivity().hideStatusBar()
         binding.btGetStarted.setOnClickListener { vm.clickAction() }
         vm.moveToMainScreen.observe(viewLifecycleOwner, moveToMainObserver)
     }

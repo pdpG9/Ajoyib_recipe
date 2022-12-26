@@ -12,10 +12,14 @@ import com.example.ajoyibrisep.R
 import com.example.ajoyibrisep.data.db.entity.MealModel
 import com.example.ajoyibrisep.databinding.ItemRecipeBinding
 import com.example.ajoyibrisep.utils.myInflate
+import kotlinx.coroutines.flow.flow
 
 
 class MealsAdapter : ListAdapter<MealModel, MealsAdapter.MealViewHolder>(MyDiffUtil) {
     private lateinit var itemClickListener: ((Int) -> Unit)
+    fun setListener(listener: (Int) -> Unit) {
+        itemClickListener = listener
+    }
 
     object MyDiffUtil : DiffUtil.ItemCallback<MealModel>() {
         override fun areItemsTheSame(oldItem: MealModel, newItem: MealModel): Boolean {
@@ -27,22 +31,20 @@ class MealsAdapter : ListAdapter<MealModel, MealsAdapter.MealViewHolder>(MyDiffU
         }
     }
 
-    fun setListener(listener: (Int) -> Unit) {
-        itemClickListener = listener
-    }
+
 
     inner class MealViewHolder(binding: ItemRecipeBinding) : RecyclerView.ViewHolder(binding.root) {
         init {
             itemView.setOnClickListener { itemClickListener.invoke(currentList[bindingAdapterPosition].id) }
         }
 
-        private val imageView: AppCompatImageView = itemView.findViewById(R.id.iv_itemRecipe)
-        private val title: AppCompatTextView = itemView.findViewById(R.id.tv_itemTitle)
-        private val timeHour: AppCompatTextView = itemView.findViewById(R.id.tv_timePrepareHour)
-        private val textHour: AppCompatTextView = itemView.findViewById(R.id.hourText)
-        private val minuteText: AppCompatTextView = itemView.findViewById(R.id.minuteText)
-        private val timeMinute: AppCompatTextView = itemView.findViewById(R.id.tv_timePrepareMinute)
-        private val ratingText: AppCompatTextView = itemView.findViewById(R.id.tv_ratingItem)
+        private val imageView: AppCompatImageView = binding.ivItemRecipe
+        private val title: AppCompatTextView = binding.tvItemTitle
+        private val timeHour: AppCompatTextView = binding.tvTimePrepareHour
+        private val textHour: AppCompatTextView = binding.hourText
+        private val minuteText: AppCompatTextView = binding.minuteText
+        private val timeMinute: AppCompatTextView = binding.tvTimePrepareMinute
+        private val ratingText: AppCompatTextView = binding.tvRatingItem
         fun bind(position: Int) {
             val data = currentList[position]
             val hour: Int = data.time / 60
@@ -57,7 +59,7 @@ class MealsAdapter : ListAdapter<MealModel, MealsAdapter.MealViewHolder>(MyDiffU
             ratingText.text = data.rating
         }
 
-        private fun checkHour(hour: Int, minute: Int) {
+        private fun checkHour(hour: Int, minute: Int) = flow<Unit> {
             if (hour == 0) {
                 timeHour.visibility = View.GONE
                 textHour.visibility = View.GONE
@@ -76,7 +78,9 @@ class MealsAdapter : ListAdapter<MealModel, MealsAdapter.MealViewHolder>(MyDiffU
             }
         }
     }
-
+    override fun getItemViewType(position: Int): Int {
+        return 3
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MealViewHolder(ItemRecipeBinding.bind(parent.myInflate(R.layout.item_recipe)))
 
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) = holder.bind(position)

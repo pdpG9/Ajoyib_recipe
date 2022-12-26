@@ -17,7 +17,6 @@ import com.example.ajoyibrisep.presentation.adapter.pager.PreparationPager
 import com.example.ajoyibrisep.presentation.viewmodel.MealViewModel
 import com.example.ajoyibrisep.presentation.viewmodel.imp.MealViewModelImp
 import com.example.ajoyibrisep.utils.myLog
-import com.example.ajoyibrisep.utils.showStatusBar
 import com.example.ajoyibrisep.utils.uploadStatusBarColor
 
 class MealScreen : Fragment(R.layout.screen_meal) {
@@ -30,7 +29,6 @@ class MealScreen : Fragment(R.layout.screen_meal) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requireActivity().showStatusBar()
         requireActivity().uploadStatusBarColor(requireContext())
         mode = requireContext().resources.configuration.uiMode
         vm.apply {
