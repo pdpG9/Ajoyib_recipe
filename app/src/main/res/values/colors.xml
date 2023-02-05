@@ -21,7 +21,7 @@
     <color name="ingredientsItemBackground">#FFF6F1</color>
     <color name="ingredientsItemTextColor">#FF5C00</color>
 
-    <color name="un_selected_category">#FFC5A4</color>
+    <color name="un_selected_category">#FB9D68</color>
     <color name="selected_category">#FF6433</color>
     <color name="un_selected_category_night">#4DFFF6F1</color>
 </resources>

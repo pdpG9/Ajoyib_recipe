@@ -66,7 +66,8 @@ class MealScreen : Fragment(R.layout.screen_meal) {
     private val showProgressObserver =
         Observer<Boolean> { if (it) binding.progressBar.show() else binding.progressBar.hide() }
     private val imagesListObserver =
-        Observer<List<String>> { imageAdapter = ImagePager(requireActivity(), it);binding.imagePager.adapter = imageAdapter }
+        Observer<List<String>> { imageAdapter = ImagePager(requireActivity(), it);binding.imagePager.adapter = imageAdapter ;
+            binding.imageDots.attachTo(binding.imagePager)}
     private val titleObserver = Observer<String> { binding.titleMeal.text = it }
     private val actionsObserver = Observer<IngredientsData> {
         preparationAdapter = PreparationPager(requireActivity(), it.ingredients, it.preparation)

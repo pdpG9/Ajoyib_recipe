@@ -12,8 +12,6 @@
         <action
             android:id="@+id/action_menuScreen_to_mainScreen"
             app:destination="@id/mainScreen"
-            app:enterAnim="@anim/from_rigth_splash"
-            app:exitAnim="@anim/to_left_splash"
             app:popUpTo="@id/menuScreen"
             app:popUpToInclusive="true" />
     </fragment>
@@ -23,17 +21,9 @@
         android:label="fragment_main"
         tools:layout="@layout/screen_main" >
         <action
-            app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left"
-            app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right"
             android:id="@+id/action_mainScreen_to_mealScreen"
             app:destination="@id/mealScreen" />
         <action
-                 app:enterAnim="@anim/from_right"
-            app:exitAnim="@anim/to_left"
-            app:popEnterAnim="@anim/from_left"
-            app:popExitAnim="@anim/to_right"
             android:id="@+id/action_mainScreen_to_infoScreen"
             app:destination="@id/infoScreen" />
     </fragment>

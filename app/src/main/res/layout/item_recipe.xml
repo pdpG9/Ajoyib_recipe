@@ -55,6 +55,7 @@
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/iv_star"
+                    android:visibility="invisible"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="?android:selectableItemBackgroundBorderless"
@@ -70,6 +71,7 @@
                     android:layout_marginTop="@dimen/margin_middleTwoView"
                     android:fontFamily="@font/poppins_regular"
                     android:padding="6dp"
+                    android:visibility="invisible"
                     android:text="@string/_4_9"
                     android:textColor="@color/text_grey"
                     android:textSize="@dimen/text_size_item_description"
@@ -104,7 +106,7 @@
                         android:tint="@color/text_description_black" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tv_timePrepareHour"
+                        android:id="@+id/tvTimeHour"
                         android:textSize="@dimen/text_size_item_description"
                         style="@style/TextStyleItemDescription" />
 
@@ -115,7 +117,7 @@
                         android:text="@string/soat" />
 
                     <androidx.appcompat.widget.AppCompatTextView
-                        android:id="@+id/tv_timePrepareMinute"
+                        android:id="@+id/tvTimeMinute"
                         style="@style/TextStyleItemDescription"
                         android:textSize="@dimen/text_size_item_description"
                         />

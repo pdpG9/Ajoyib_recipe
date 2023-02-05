@@ -1,5 +1,6 @@
 package com.example.ajoyibrisep.presentation.adapter
 
+import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
@@ -17,6 +18,8 @@ import kotlinx.coroutines.flow.flow
 
 class MealsAdapter : ListAdapter<MealModel, MealsAdapter.MealViewHolder>(MyDiffUtil) {
     private lateinit var itemClickListener: ((Int) -> Unit)
+    private var hour = 0
+    private var minute = 0
     fun setListener(listener: (Int) -> Unit) {
         itemClickListener = listener
     }
@@ -32,7 +35,6 @@ class MealsAdapter : ListAdapter<MealModel, MealsAdapter.MealViewHolder>(MyDiffU
     }
 
 
-
     inner class MealViewHolder(binding: ItemRecipeBinding) : RecyclerView.ViewHolder(binding.root) {
         init {
             itemView.setOnClickListener { itemClickListener.invoke(currentList[bindingAdapterPosition].id) }
@@ -40,18 +42,14 @@ class MealsAdapter : ListAdapter<MealModel, MealsAdapter.MealViewHolder>(MyDiffU
 
         private val imageView: AppCompatImageView = binding.ivItemRecipe
         private val title: AppCompatTextView = binding.tvItemTitle
-        private val timeHour: AppCompatTextView = binding.tvTimePrepareHour
+        private val timeHour: AppCompatTextView = binding.tvTimeHour
         private val textHour: AppCompatTextView = binding.hourText
         private val minuteText: AppCompatTextView = binding.minuteText
-        private val timeMinute: AppCompatTextView = binding.tvTimePrepareMinute
+        private val timeMinute: AppCompatTextView = binding.tvTimeMinute
         private val ratingText: AppCompatTextView = binding.tvRatingItem
         fun bind(position: Int) {
             val data = currentList[position]
-            val hour: Int = data.time / 60
-            val minute: Int = data.time % 60
-            timeHour.text = hour.toString()
-            timeMinute.text = hour.toString()
-            checkHour(hour, minute)
+           calcTime(data.time)
             Glide.with(itemView).load(data.image)
                 .placeholder(R.drawable.image_menu)
                 .into(imageView)
@@ -59,14 +57,26 @@ class MealsAdapter : ListAdapter<MealModel, MealsAdapter.MealViewHolder>(MyDiffU
             ratingText.text = data.rating
         }
 
-        private fun checkHour(hour: Int, minute: Int) = flow<Unit> {
+        private fun calcTime(time: Int) {
+            if (time < 60) {
+                timeHour.text = "0"
+                timeMinute.text = time.toString()
+                checkHour(0,time)
+                return
+            }else{
+                timeHour.text = (time/60).toString()
+                timeMinute.text = "${time%60}"
+                checkHour(time/60,time%60)
+            }
+        }
+
+        private fun checkHour(hour: Int, minute: Int){
             if (hour == 0) {
                 timeHour.visibility = View.GONE
                 textHour.visibility = View.GONE
             } else {
                 timeHour.visibility = View.VISIBLE
                 textHour.visibility = View.VISIBLE
-                timeHour.text = hour.toString()
             }
             if (minute == 0) {
                 minuteText.visibility = View.GONE
@@ -74,14 +84,16 @@ class MealsAdapter : ListAdapter<MealModel, MealsAdapter.MealViewHolder>(MyDiffU
             } else {
                 minuteText.visibility = View.VISIBLE
                 timeMinute.visibility = View.VISIBLE
-                timeMinute.text = minute.toString()
             }
         }
     }
+
     override fun getItemViewType(position: Int): Int {
         return 3
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MealViewHolder(ItemRecipeBinding.bind(parent.myInflate(R.layout.item_recipe)))
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        MealViewHolder(ItemRecipeBinding.bind(parent.myInflate(R.layout.item_recipe)))
 
     override fun onBindViewHolder(holder: MealViewHolder, position: Int) = holder.bind(position)
 }

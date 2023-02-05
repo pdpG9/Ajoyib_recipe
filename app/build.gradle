@@ -9,7 +9,7 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.ajoyibrisep"
+        applicationId "uz.gita.ajoyibrisep"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -74,4 +74,5 @@ dependencies {
 
     //
     implementation "ru.surfstudio.android:easyadapter:7.0.1"
+    implementation 'androidx.core:core-splashscreen:1.0.0'
 }
